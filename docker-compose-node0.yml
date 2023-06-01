@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  geth-node0:
+    build: .
+    volumes:
+      - ./node0:/opt/ethPoA/node0
+    ports:
+      - "30303:30303"
+      - "8545:8545"
+      - "8546:8546"
+    command: "--networkid 8888 --datadir /opt/ethPoA/node0/data --port 30303 --ipcdisable --syncmode full --allow-insecure-unlock --http --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain \"*\" --unlock 0xafBe2BB240376eb6D5A87B1ff586A7A92569E00E --password /opt/ethPoA/node0/password.txt --http.api \"admin,eth,net,web3,miner,txpool,debug,clique\" --ws --ws.addr 0.0.0.0 --ws.port 8546 --ws.origins \"*\" --ws.api \"admin,eth,net,web3,miner,txpool,debug,clique\" --maxpeers 25 --miner.etherbase 0xafBe2BB240376eb6D5A87B1ff586A7A92569E00E --miner.gasprice 0 --mine"

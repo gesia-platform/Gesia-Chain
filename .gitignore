@@ -1,0 +1,3 @@
+keys/
+node0/data/keystore/
+node0/data/geth/jwtsecret
